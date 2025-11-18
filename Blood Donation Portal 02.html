@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)file:///C:/Users/19.hp/Downloads/Blood%20Donation%20Portal%2001.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Portal</title>
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #b30000, #800000);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { margin-bottom: 5px; }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: yellow; }
+
+    /* Hero Section */
+    #home {
+      
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    }
+    #home h2 { font-size: 2.5rem; margin-bottom: 15px; }
+
+    /* Sections */
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #b30000;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #b30000;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      margin-top: 20px;
+    }
+    label { margin: 10px 0 5px; font-weight: bold; }
+    input, select, button {
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      background: #b30000;
+      color: white;
+      font-weight: bold;
+      border: none;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    button:hover { background: #800000; }
+
+    /* Confirmation */
+    #confirmation {
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 6px;
+      background: #e6ffe6;
+      color: #006600;
+      font-weight: bold;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #b30000;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      nav a { display: block; margin: 10px 0; }
+      #home { padding: 60px 20px; }
+      #home h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blood Donation Portal</h1>
+    <nav>
+      <a href="file:///C:/Users/19.hp/Downloads/Blood%20Donation%20Portal.htm#home">Home</a>
+      <a href="file:///C:/Users/19.hp/Downloads/Blood%20Donation%20Portal.htm#register">Register</a>
+      <a href="file:///C:/Users/19.hp/Downloads/Blood%20Donation%20Portal.htm#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home / Hero -->
+  <section id="home">
+    <h2>Welcome to the Blood Donation Portal</h2>
+    <p>Donate blood, save lives. Join our community of heroes today.</p>
+  </section>
+
+  <!-- Registration -->
+  <section id="register">
+    <h2>Donor Registration</h2>
+    <p>Please fill out the form below to register as a blood donor.</p>
+    <form id="donorForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required="">
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" required="">
+
+      <label for="bloodGroup">Blood Group:</label>
+      <select id="bloodGroup" required="">
+        <option value="" selected="selected">Select</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>O+</option><option>O-</option>
+        <option>AB+</option><option>AB-</option>
+      </select>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" required="">
+
+      <button type="submit">Submit</button>
+    </form>
+    <div id="confirmation"></div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:support@blooddonation.org">support@blooddonation.org</a></p>
+    <p>Phone: +91-9445517498</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Blood Donation Portal | Save Lives, Give Blood|by varshan</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    document.getElementById("donorForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+      const bloodGroup = document.getElementById("bloodGroup").value;
+      const location = document.getElementById("location").value;
+
+      const confirmationBox = document.getElementById("confirmation");
+      confirmationBox.style.display = "block";
+      confirmationBox.innerHTML = `
+        ✅ Thank you, <b>${name}</b>! You have successfully registered as a blood donor.<br>
+        Details: Age ${age}, Blood Group ${bloodGroup}, Location ${location}.
+      `;
+
+      document.getElementById("donorForm").reset();
+    });
+  </script>
+
+
+</body></html>
